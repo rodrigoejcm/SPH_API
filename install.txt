@@ -1,0 +1,38 @@
+### Environment Creatiom
+>> python3 -m venv env
+
+### Environment Creatiom
+>> source env/bin/activate
+
+### PIP installs and upgrades
+
+
+## neste exemplo vou usar KERAS + Tensorflow
+
+# install tensorflow
+>> pip install tensorflow==1.13.1
+    
+
+# install keras
+>> pip install keras=2.2.4
+
+
+# isntall hdf5 para salvar o modelo
+>> pip install h5py
+
+# outras dependencias
+>> pip install plotly 
+>> pip install nltk
+>> pip install pandas
+>> pip install scikit-learn
+>> pip install matplotlib
+
+>> pip install num2words
+>> pip install keras_metrics
+
+
+
+
+
+
+
