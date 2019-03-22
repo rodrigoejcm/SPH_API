@@ -13,7 +13,6 @@ __pycache__/
 # exclusion files
 pass_tw.py
 pass_tw_2.py
-*.json
 hidecode.tplx
 
 
