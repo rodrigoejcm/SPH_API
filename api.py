@@ -52,6 +52,8 @@ class PredictHateSpeech(Resource):
 
         result_prediction = predict(user_query,user_lang,user_model)
 
+        print(result_prediction)
+
         return result_prediction
 
 
@@ -85,6 +87,8 @@ class PredictNewsHateSpeech(Resource):
         # PREDICT 
 
         result_prediction = predict(user_query,user_lang,user_model)
+
+        print(result_prediction)
 
         return result_prediction
 
