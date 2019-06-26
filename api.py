@@ -89,10 +89,12 @@ class PredictNewsHateSpeech(Resource):
 
         
   
-        #print('[INFO REQUEST] Received Parameters')
-        #print('[INFO REQUEST - content ] ', user_query)
-        #print('[INFO REQUEST - headline ] ', news_headline)
-        #print('[INFO REQUEST - news_title ] ', news_title)
+        print('[INFO REQUEST] Received Parameters')
+        print('[INFO REQUEST - title ] ', title_news)
+        print('[---]')
+        print('[INFO REQUEST - lead_news ] ', lead_news)
+        print('[---]')
+        print('[INFO REQUEST - text_news ] ', text_news)
         #print('[INFO REQUEST - Model ] ', user_model)
         #print('[INFO REQUEST - Lang ] ', user_lang)
 
