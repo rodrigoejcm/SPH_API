@@ -37,6 +37,25 @@
 gunicorn --bind 0.0.0.0:8000 wsgi
 
 teste:  curl -X GET http://127.0.0.1:8000/ -d 'query=Eu odiei este filme&lang=en&model=01'
+curl -X GET http://0.0.0.0:8000/news_api -d 'query=Eu odiei este filme&lang=en&model=01'
 
 
 
+
+curl -X GET http://0.0.0.0:8000/news_api -d 'title_news="Trump responds to Iranian insults with threat of obliteration"&lead_news="President Donald Trump on Tuesday threatened Iran with great and overwhelming force and potential obliteration in some areas if it attacks anything American after Iranian leaders said the White House is afflicted by mental retardation and they are permanently closing doors to diplomacy in the wake of U.S. sanctions"&authors_news="MERIDITH MCGRAW J, Cassandra Maia, Levi Master, Paul Well"&period_day_news=2&weekday_news=0&text_news="Trump called statements made by Iranian President Hassan Rouhani and"&source_news=0'
+
+
+curl -X GET http://0.0.0.0:8000/news_api -d 'query=Eu odiei este filme&lang=en&model=01'
+
+
+curl -X GET http://0.0.0.0:8000/news_api -d 
+'title_news="Trump responds to Iranian insults with threat of obliteration"
+&lead_news="President Donald Trump on Tuesday threatened Iran with great and overwhelming force and potential obliteration in some areas if it attacks anything American after Iranian leaders said the White House is afflicted by mental retardation and they are permanently closing doors to diplomacy in the wake of U.S. sanctions"
+&authors_news="MERIDITH MCGRAW J, Cassandra Maia, Levi Master, Paul Well
+"&period_day_news=2&
+weekday_news=0
+&text_news="Trump called statements made by Iranian President Hassan Rouhani and"
+&source_news=0'
+
+
+gunicorn --bind 0.0.0.0:8000 wsgi --limit-request-line 20000
