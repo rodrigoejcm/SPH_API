@@ -36,7 +36,7 @@ def predict(user_query,lang):
     if lang == "en":
         user_query = clean_text_en.clean_text_full(user_query)
         if user_query  == "EMPTY STRING":
-            return {'message':"Empty String"}
+            return  'message : Empty Parameters'
         else:
             user_query = nlp_functions.steam_text(user_query)
             
@@ -68,7 +68,7 @@ def predict(user_query,lang):
                 result = "Normal Language"
 
             # CREATE JSON TO OUTPUT
-            return {'prediction': result}
+            return result
             
     else:
-        return {'message':'Language not supported'}
+        return 'message : Language not supported'

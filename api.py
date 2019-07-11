@@ -71,7 +71,7 @@ class PredictHateSpeech(Resource):
 
             return result_prediction
         else:
-            return  {"message": "Missing Parameters"}
+            return  "message : Missing Parameters"
 
 
 
@@ -125,10 +125,10 @@ class PredictNewsHateSpeech(Resource):
                 print(result_prediction)
                 return result_prediction
             else:
-                return  {"message": "Empty Parameters"}    
+                return  "message : Empty Parameters"  
 
         else:
-            return  {"message": "Missing Parameters"}
+            return  "message : Missing Parameters"
 
 
 api.add_resource(PredictNewsHateSpeech, '/news')

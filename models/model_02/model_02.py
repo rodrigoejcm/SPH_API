@@ -76,7 +76,7 @@ def predict(user_query,lang):
         else:
             pred = "Hate"
 
-        return {'prediction': pred}
+        return pred
         
         ############ TODO fazer pop da ultima layer e trocar ativação para softma
         ### https://stackoverflow.com/questions/43083381/keras-predict-proba-does-not-add-up-to-1
@@ -90,6 +90,6 @@ def predict(user_query,lang):
     elif lang == 'pt':
         pass
     else:
-        return {'message':'Language not supported'}
+        return 'message : Language not supported'
 
 
