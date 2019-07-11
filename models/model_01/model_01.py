@@ -55,8 +55,11 @@ def predict(user_query,lang):
             #loaded_model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
             #print(data_test)
             score = loaded_model.predict_classes(data_test)
+            score2 = loaded_model.predict(data_test)
             #print(score)
-
+            print(score)
+            print(score2)
+            print("----------------")
             if score[0] == 0:
                 result = "Hate Speech"
             elif score[0] == 1:

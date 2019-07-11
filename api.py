@@ -53,23 +53,29 @@ class PredictHateSpeech(Resource):
         user_model = args['model']
         user_lang = args['lang']
 
-        print('[INFO REQUEST] Received Parameters')
-        print('[INFO REQUEST - content ] ', user_query)
-        print('[INFO REQUEST - Model ] ', user_model)
-        print('[INFO REQUEST - Lang ] ', user_lang)
 
-        application.logger.info('[LOG] Query: ', user_query)
+        if (args['content']):
 
-        # PREDICT 
+            print('[INFO REQUEST] Received Parameters')
+            print('[INFO REQUEST - content ] ', user_query)
+            print('[INFO REQUEST - Model ] ', user_model)
+            print('[INFO REQUEST - Lang ] ', user_lang)
 
-        result_prediction = predict(user_query,user_lang,user_model)
+            application.logger.info('[LOG] Query: ', user_query)
 
-        print(result_prediction)
+            # PREDICT 
 
-        return result_prediction
+            result_prediction = predict(user_query,user_lang,user_model)
+
+            print(result_prediction)
+
+            return result_prediction
+        else:
+            return  {"message": "Missing Parameters"}
 
 
-api.add_resource(PredictHateSpeech, '/comments_api')
+
+api.add_resource(PredictHateSpeech, '/comments')
 
 
 class PredictNewsHateSpeech(Resource):
@@ -87,6 +93,17 @@ class PredictNewsHateSpeech(Resource):
         week_news = args['weekday_news']
         period_news = args['period_day_news']
 
+        if not source_news:
+            source_news = 14
+        
+        if not week_news:
+            #unknown
+            week_news = 2
+
+        if not period_news:
+            #unknown
+            period_news = 4
+
         
   
         print('[INFO REQUEST] Received Parameters')
@@ -101,14 +118,20 @@ class PredictNewsHateSpeech(Resource):
         #application.logger.info('[LOG] Query: ', user_query)
 
         # PREDICT 
-        result_prediction = predict_news_hatespeech(title_news , lead_news , text_news , authors_news , source_news , week_news , period_news )
+        if (title_news and lead_news and text_news ):
 
-        print(result_prediction)
+            if (title_news is not "") & (lead_news is not "") & (text_news is not ""):
+                result_prediction = predict_news_hatespeech(title_news , lead_news , text_news , authors_news , source_news , week_news , period_news )
+                print(result_prediction)
+                return result_prediction
+            else:
+                return  {"message": "Empty Parameters"}    
 
-        return result_prediction
+        else:
+            return  {"message": "Missing Parameters"}
 
 
-api.add_resource(PredictNewsHateSpeech, '/news_api')
+api.add_resource(PredictNewsHateSpeech, '/news')
 
 
 
