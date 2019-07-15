@@ -5,14 +5,14 @@ sys.path.append(os.path.abspath("models"))
 
 from flask import Flask
 from flask_restful import reqparse, abort, Api, Resource
-from flask_cors import CORS
+#from flask_cors import CORS
 
 from models import load_models, predict, predict_news_hatespeech
 
 ### LOAD APP
 
 application = Flask(__name__)
-CORS(application)
+#CORS(application)
 api = Api(application)
 
 ### LOAD MODEL
