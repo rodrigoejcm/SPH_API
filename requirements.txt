@@ -77,6 +77,6 @@ textblob==0.15.3
 thinc==7.0.4
 tqdm==4.32.2
 traitlets==4.3.2
-urllib3==1.24.1
+urllib3==1.24.2
 wasabi==0.2.2
 Werkzeug==0.15.3
